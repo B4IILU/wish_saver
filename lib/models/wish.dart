@@ -1,30 +1,15 @@
-import 'package:hive/hive.dart';
+import 'package:isar/isar.dart';
 
 part 'wish.g.dart';
 
-@HiveType(typeId: 0)
+@collection
 class Wish {
-  @HiveField(0)
-  final String id;
+  Id id = Isar.autoIncrement;
 
-  @HiveField(1)
-  final String title;
+  late String title;
+  late double targetAmount;
+  double currentAmount = 0;
 
-  @HiveField(2)
-  final double targetAmount;
-
-  @HiveField(3)
-  double savedAmount;
-
-  @HiveField(4)
-  String? storeUrl; //shoplink
-  
-
-  Wish({
-    required this.id,
-    required this.title,
-    required this.targetAmount,
-    this.savedAmount = 0,
-    this.storeUrl,
-  });
+  String? storeUrl;
+  DateTime createdAt = DateTime.now();
 }

@@ -1,24 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:wish_saver/models/free_money.dart';
 import 'screens/home_screen.dart';
 import 'services/wish_service.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'models/wish.dart';
+import 'package:wish_saver/models/wish_transaction.dart';
+
 void main() async {
+
   WidgetsFlutterBinding.ensureInitialized();
-
-  await Hive.initFlutter();
-  Hive.registerAdapter(WishAdapter());
-  await Hive.openBox<Wish>('wishes');
-
   runApp(MyApp());
 }
-
 //kornevoi vidget prilozhenia
 class MyApp extends StatelessWidget {
   MyApp({super.key});
 
   // Один общий сервис для всего приложения.
-  // Пока без Hive, просто в памяти.
   final WishService _wishService = WishService();
 
   @override
@@ -35,3 +31,5 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+

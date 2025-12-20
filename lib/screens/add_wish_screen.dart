@@ -17,28 +17,28 @@ class AddWishScreen extends StatefulWidget{
 class _AddWishScreenState extends State<AddWishScreen> {
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _targetController = TextEditingController();
+  final TextEditingController _urlController = TextEditingController();
 
   //save & return back
   void _save() {
-    final title = _titleController.text.trim();
-    final targetText = _targetController.text.trim();
+  final title = _titleController.text.trim();
+  final targetText = _targetController.text.trim();
 
-    if (title.isEmpty || targetText.isEmpty) {
-      return;
-    }
+  if (title.isEmpty || targetText.isEmpty) return;
 
-    final target = double.tryParse(targetText);
-    if (target == null) {
-      return;
-    }
+  final target = double.tryParse(targetText);
+  if (target == null) return;
 
-    widget.wishService.addWish(
-      title: title,
-      targetAmount: target,
-    );
+  final url = _urlController.text.trim();
 
-    Navigator.pop(context);
-  }
+  widget.wishService.addWish(
+    title: title,
+    targetAmount: target,
+    storeUrl: url.isEmpty ? null : url,
+  );
+
+  Navigator.pop(context);
+}
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +62,13 @@ class _AddWishScreenState extends State<AddWishScreen> {
               keyboardType: TextInputType.number,
               decoration: const InputDecoration(
                 labelText: 'Сколько надо бабла (zł)',
+              ),
+            ),
+            const SizedBox(height: 12),
+            TextField(
+              controller: _urlController,
+              decoration: const InputDecoration(
+                labelText: 'Ссылка на товар (необязательно)',
               ),
             ),
             const SizedBox(height: 24),

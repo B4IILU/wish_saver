@@ -1,44 +1,62 @@
-import 'package:hive_flutter/adapters.dart';
-import 'package:uuid/uuid.dart';
+import 'package:isar/isar.dart';
+
 import '../models/wish.dart';
+import '../models/wish_transaction.dart';
+import 'isar_service.dart';
 
 class WishService {
-  static const String boxName = 'wishes';
-  final Uuid _uuid = const Uuid();
-
-  Box<Wish> get _box => Hive.box<Wish>(boxName);
-
-  List<Wish> get wishes => _box.values.toList();
   
-  void addWish({
+   Future<List<Wish>> getWishes() async {
+    final isar = await IsarService.instance;
+    return await isar.wishs
+        .where()
+        .sortByCreatedAtDesc()
+        .findAll();
+  }
+
+  Future<void> addWish({
     required String title,
     required double targetAmount,
     String? storeUrl,
-  }) {
-    final wish = Wish(
-      id: _uuid.v4(),
-      title: title,
-      targetAmount: targetAmount,
-      storeUrl: storeUrl,
+  }) async {
+    final isar = await IsarService.instance;
+
+    final wish = Wish()
+      ..title = title
+      ..targetAmount = targetAmount
+      ..currentAmount = 0
+      ..storeUrl = storeUrl;
+
+    await isar.writeTxn(() async {
+      await isar.wishs.put(wish);
+    });
+  }
+
+  Future<void> removeWish(int id) async {
+    final isar = await IsarService.instance;
+
+    await isar.writeTxn(() async {
+      await isar.wishs.delete(id);
+    });
+  }
+
+  Future<void> addMoneyToWish(int wishId, double amount) async {
+    final isar = await IsarService.instance;
+
+    await isar.writeTxn(() async {
+      final wish = await isar.wishs.get(wishId);
+      if (wish == null) return;
+
+      wish.currentAmount += amount;
+      await isar.wishs.put(wish);
+
+      final tx = WishTransaction(
+        amount: amount,
+        wishId: wishId,
+        date: DateTime.now(),
       );
-    _box.add(wish);
-  }
 
-  // Добавить денег к конкретной цели
-  void addMoneyToWish(String id, double amount) {
-    final index = _box.values.toList().indexWhere((w) => w.id == id);
-    if (index == -1) return;
-
-    final wish = _box.getAt(index)!;
-    wish.savedAmount += amount;
-    _box.putAt(index, wish);
-  }
-
-  // Удалить цель
-  void removeWish(String id) {
-    final index = _box.values.toList().indexWhere((w) => w.id == id);
-    if (index == -1) return;
-
-    _box.deleteAt(index);
+      await isar.wishTransactions.put(tx);
+    });
   }
 }
