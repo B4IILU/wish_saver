@@ -1,4 +1,4 @@
-package com.example.wish_saver
+package com.b4llu.wishsaver
 
 import io.flutter.embedding.android.FlutterActivity
 
