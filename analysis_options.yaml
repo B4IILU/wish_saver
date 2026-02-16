@@ -1,0 +1,26 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - build/**
+    - .dart_tool/**
+    - ios/**
+    - android/**
+    - macos/**
+    - linux/**
+    - windows/**
+    - web/**
+
+linter:
+  rules:
+    # --- ИМПОРТЫ ---
+    always_use_package_imports: true
+    avoid_relative_lib_imports: true
+    directives_ordering: true
+
+    # --- СТИЛЬ ---
+    prefer_single_quotes: true
+    unnecessary_this: true
+
+    # --- ОТЛАДКА (можешь включить обратно позже) ---
+    avoid_print: false

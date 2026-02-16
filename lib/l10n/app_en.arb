@@ -1,0 +1,215 @@
+{
+  "@@locale": "en",
+  "russian": "Russian",
+  "english": "English",
+  "@russian": {
+    "description": "Название языка русский"
+  },
+  "@english": {
+    "description": "Название языка английский"
+  },
+  "appTitle": "Wish Saver",
+  "@appTitle": {
+    "description": "Название приложения"
+  },
+  "theme": "Theme",
+  "@theme": {
+    "description": "Настройка темы приложения"
+  },
+  "language": "Language",
+  "@language": {
+    "description": "Настройка языка приложения"
+  },
+  "history": "History",
+  "@history": {
+    "description": "Раздел истории"
+  },
+  "contact": "Contacts",
+  "@contact": {
+    "description": "Раздел связи"
+  },
+  "priceMustBePositive": "Price must be greater than 0",
+  "@priceMustBePositive": {
+    "description": "Ошибка если цена меньше или равна нулю"
+  },
+  "newTarget": "New Target",
+  "@newTarget": {
+    "description": "Заголовок создания новой цели"
+  },
+  "name": "Name",
+  "@name": {
+    "description": "Поле названия цели"
+  },
+  "price": "Price (zł)",
+  "@price": {
+    "description": "Поле цены цели"
+  },
+  "url": "Product link (optional)",
+  "@url": {
+    "description": "Поле ссылки на товар"
+  },
+  "save": "Save",
+  "@save": {
+    "description": "Кнопка сохранения"
+  },
+  "congratulation": "Congratulations",
+  "@congratulation": {
+    "description": "Заголовок при завершении цели"
+  },
+  "freeMoneyWhere": "Where to allocate free money",
+  "@freeMoneyWhere": {
+    "description": "Диалог распределения свободных денег"
+  },
+  "withdrawFromFreeMoney": "Withdraw some amount",
+  "@withdrawFromFreeMoney": {
+    "description": "Remove part of free money without moving to target"
+  },
+  "withdrawFreeMoneyTitle": "How much to withdraw from free money?",
+  "@withdrawFreeMoneyTitle": {
+    "description": "Dialog title for withdrawing amount from free money"
+  },
+  "withdrawAmountLabel": "Amount (zł)",
+  "@withdrawAmountLabel": {
+    "description": "Amount field label for free money withdrawal"
+  },
+  "withdraw": "Withdraw",
+  "@withdraw": {
+    "description": "Confirm withdrawal from free money"
+  },
+  "amountMustBeGreaterThanZero": "Amount must be greater than 0",
+  "@amountMustBeGreaterThanZero": {
+    "description": "Validation error for non-positive amount"
+  },
+  "notEnoughFreeMoney": "Not enough free money",
+  "@notEnoughFreeMoney": {
+    "description": "Validation error when amount exceeds free money"
+  },
+  "noTargets": "No available targets",
+  "@noTargets": {
+    "description": "Сообщение если целей нет"
+  },
+  "cancel": "Cancel",
+  "@cancel": {
+    "description": "Кнопка отмены"
+  },
+  "myTargets": "My Targets",
+  "@myTargets": {
+    "description": "Заголовок главного экрана"
+  },
+  "noTargetsNow": "No targets yet",
+  "@noTargetsNow": {
+    "description": "Сообщение если пока нет созданных целей"
+  },
+  "wrongUrl": "Failed to open the link",
+  "@wrongUrl": {
+    "description": "Ошибка открытия URL"
+  },
+  "moneyWhere": "The target will be deleted. Where should the money be moved?",
+  "@moneyWhere": {
+    "description": "Диалог переноса денег перед удалением цели"
+  },
+  "deleteTargetQQ": "Delete target?",
+  "@deleteTargetQQ": {
+    "description": "Подтверждение удаления цели"
+  },
+  "toFreeMoney": "To free money",
+  "@toFreeMoney": {
+    "description": "Перенести деньги в свободные"
+  },
+  "toAnotherTarget": "To another target",
+  "@toAnotherTarget": {
+    "description": "Перенести деньги в другую цель"
+  },
+  "deleteTarget": "Delete target",
+  "@deleteTarget": {
+    "description": "Кнопка удаления цели"
+  },
+  "noMoreTargets": "No other targets",
+  "@noMoreTargets": {
+    "description": "Сообщение если нет других целей для переноса"
+  },
+  "chooseTarget": "Choose a target",
+  "@chooseTarget": {
+    "description": "Выбор цели для переноса денег"
+  },
+  "transactionsHistory": "Top-up History",
+  "@transactionsHistory": {
+    "description": "Заголовок истории транзакций"
+  },
+  "delete": "Delete",
+  "@delete": {
+    "description": "Кнопка удаления"
+  },
+  "edit": "Edit",
+  "@edit": {
+    "description": "Кнопка редактирования"
+  },
+  "addTarget": "Add Target",
+  "@addTarget": {
+    "description": "Кнопка добавления цели"
+  },
+  "done": "Complete",
+  "@done": {
+    "description": "Кнопка завершения цели"
+  },
+  "editTarget": "Edit Target",
+  "@editTarget": {
+    "description": "Заголовок редактирования цели"
+  },
+  "addPlace": "Ad will be here",
+  "@addPlace": {
+    "description": "Заглушка рекламного блока"
+  },
+  "freeMoney": "Free Money",
+  "@freeMoney": {
+    "description": "Раздел свободных денег"
+  },
+  "progressText": "Saved: {current} / {target} zł",
+  "@progressText": {
+    "description": "Текст прогресса накопления",
+    "placeholders": {
+      "current": {},
+      "target": {}
+    }
+  },
+  "historyTitle": "History",
+  "@historyTitle": {
+    "description": "Transactions history title"
+  },
+  "showAll": "Show all",
+  "@showAll": {
+    "description": "Show all transactions button"
+  },
+  "targetCompleted": "Target completed",
+  "@targetCompleted": {
+    "description": "Completed target label"
+  },
+  "saveToHistory": "Save to history",
+  "@saveToHistory": {
+    "description": "Save to history button"
+  },
+  "openStore": "Open store",
+  "@openStore": {
+    "description": "Open store button"
+  },
+  "addAmount": "Add amount (zł)",
+  "@addAmount": {
+    "description": "Add amount field label"
+  },
+  "add": "Add",
+  "@add": {
+    "description": "Add button"
+  },
+  "completedTargets": "Completed targets",
+  "@completedTargets": {
+    "description": "Completed targets history screen title"
+  },
+  "noCompletedTargets": "No completed targets yet",
+  "@noCompletedTargets": {
+    "description": "Empty state for completed targets history"
+  },
+  "completedAt": "Completed on",
+  "@completedAt": {
+    "description": "Completed date label"
+  }
+}
